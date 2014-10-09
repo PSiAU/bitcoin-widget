@@ -131,8 +131,7 @@ function getCoinSpot(url, callback) {
             last: json.prices.btc.last,
             buy: json.prices.btc.bid,
             sell: json.prices.btc.ask,
-            currency: json.currency,
-            timestamp: json.timestamp
+            currency: 'aud'
         });
     });
 }
