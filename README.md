@@ -9,6 +9,7 @@ bitcoin-widget is a simple OSX dashboard widget that displays data from these so
  - Bitstamp USD
  - BTC-e USD
  - BTC Markets AUD
+ - CoinSpot AUD
 
 ## Sources
 
