@@ -46,6 +46,11 @@ var sources = {
         name: "BTC Markets AUD",
         url: "https://api.btcmarkets.net/market/BTC/AUD/tick",
         fetchMethod: getBTCMarkets
+    },
+    CoinSpotAUD: {
+        name: "CoinSpot AUD",
+        url: "https://www.coinspot.com.au/pubapi/latest",
+        fetchMethod: getCoinSpot
     }
 };
 
@@ -114,6 +119,18 @@ function getBTCMarkets(url, callback) {
             last: json.lastPrice,
             buy: json.bestBid,
             sell: json.bestAsk,
+            currency: json.currency,
+            timestamp: json.timestamp
+        });
+    });
+}
+
+function getCoinSpot(url, callback) {
+    $.getJSON(url, function(json) {
+        callback({
+            last: json.prices.btc.last,
+            buy: json.prices.btc.bid,
+            sell: json.prices.btc.ask,
             currency: json.currency,
             timestamp: json.timestamp
         });
